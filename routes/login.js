@@ -11,11 +11,14 @@ module.exports = (router) => {
     let authArr = new Buffer(base64ed, 'base64').toString().split(':');
     let newUser = new User({name: authArr[0], password: authArr[1]});
     newUser.save((err, user) => {
-      if (err) console.log(err);
-      if (!user) {
+      if (err && err.message === 'users validation failed') {
+        res.write(err.errors.password.message);
+        res.end();
+      } else if (!user) {
         res.write('Username taken');
         res.end();
-      } else {
+      }
+      if (user) {
         res.write('User Saved');
         res.end();
       }

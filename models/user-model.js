@@ -6,13 +6,18 @@ let jwt = require('jsonwebtoken');
 
 let userSchema = mongoose.Schema({
   name: {type: String, unique: true},
-  password: String,
+  password: {
+    type: String,
+    minlength: [6, 'Password must be at least 6 characters'],
+    maxlength: [21, 'Password max length: 21 characters']
+  },
   Access: {type: Number, default: 0}
 });
 
+
+
 userSchema.pre('save', function(next) {
   this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10));
-  console.log(this.password);
   next();
 });
 
