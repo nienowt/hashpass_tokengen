@@ -1,0 +1,37 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.8",
+    "jsonwebtoken": "^5.7.0",
+    "bcrypt": "^0.8.5"
+  },
+  "devDependencies": {
+    "gulp-mocha": "^2.2.0",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nienowt/hashpass_tokengen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nienowt/hashpass_tokengen/issues"
+  },
+  "homepage": "https://github.com/nienowt/hashpass_tokengen#readme"
+}

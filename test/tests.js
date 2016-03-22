@@ -37,4 +37,14 @@ describe('/user creation and login routes', ()=> {
       done();
     });
   });
+  it('should remove users if password valid', (done) => {
+    request('localhost:3000')
+    .post('/users/delete')
+    .auth('pepper','password')
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res.text).to.eql('User Removed');
+      done();
+    });
+  });
 });

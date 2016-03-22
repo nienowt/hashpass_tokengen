@@ -6,7 +6,7 @@ let mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:db');
 
 let publicRouter = express.Router();
-let apiRouter = express.Router();
+
 
 require('./routes/login')(publicRouter);
 app.use('/users', publicRouter);
